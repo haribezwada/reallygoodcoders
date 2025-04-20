@@ -1,42 +1,48 @@
-#hari could you put the wikipedia code here? thxxxxxx
-#this below is from class:
-### chap04/qweb6.py
+#Our CS32 Final Project!!! 
+
 import requests
-import json
 
-def main():
-    query = input("What drug would you like to check the interactions for?")
-    print('Searching wikipedia for,' '[query]')
-
-    # Concatenate the first 3 components of a URL for HTTP
-    protocol = 'https'
-    hostname = 'en.wikipedia.org'
-    path = '/w/api.php'
-    url = protocol + '://' + hostname + path
-
-    # Describe the query string as a Python dictionary
-    query = {'action': 'query',
-             'list': 'search',
-             'srsearch': '[query]',
-             'srlimit': 1,
-             'format': 'json'
+def search_wikipedia(query):
+    # Step 1: Search Wikipedia for the query
+    search_url = "https://en.wikipedia.org/w/api.php"
+    search_params = {
+        "action": "query",
+        "list": "search",
+        "srsearch": query,
+        "format": "json"
     }
+    response = requests.get(search_url, params=search_params)
+    data = response.json()
 
-    response = requests.get(url, params=query)
+    if not data["query"]["search"]:
+        print("No results found.")
+        return None
 
-    # Print the response body directly
-    print("response.text =", response.text)
+    # Get the title of the first search result
+    title = data["query"]["search"][0]["title"]
+    return title
 
-    print()
+def get_wikipedia_text(title):
+    # Step 2: Fetch the page content in plain text
+    content_url = "https://en.wikipedia.org/w/api.php"
+    content_params = {
+        "action": "query",
+        "prop": "extracts",
+        "explaintext": True,
+        "titles": title,
+        "format": "json"
+    }
+    response = requests.get(content_url, params=content_params)
+    data = response.json()
 
-    # Read the response body in JSON format and print it
-    j = response.json()
-    print("response.json() =", json.dumps(j, indent=4))
+    pages = data["query"]["pages"]
+    page = next(iter(pages.values()))
+    return page.get("extract", "No text found.")
 
-    print()
-
-    # Print just the title from the JSON-structured response
-    print("Title =", j['query']['search'][0]['title'])
-
-if __name__ == '__main__':
-    main()
+# Example usage
+query = "Ibuprofen"
+title = search_wikipedia(query)
+if title:
+    text = get_wikipedia_text(title)
+    print(f"\n--- Wikipedia Article: {title} ---\n")
+    print(text)

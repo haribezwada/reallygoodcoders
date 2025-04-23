@@ -1,4 +1,5 @@
 ###drug_interactions.py
+#this code takes drug name input from a user, translates from brand to scientific name if necessary, checks the drug for interactions against the FDA database, and then prints out whether the drug has interactions with other drugs, and what they are.
 import csv
 from operator import itemgetter
 

@@ -46,3 +46,45 @@ if title:
     text = get_wikipedia_text(title)
     print(f"\n--- Wikipedia Article: {title} ---\n")
     print(text)
+
+### 4/22/2025 update: code that processes the text from Wikipedia!
+
+# text is the variable that describes the Wikipedia paragraph
+
+import re
+
+fruit_interactions = []
+vegetable_interactions = []
+
+fruits = {"banana", "pineapple"} # these are examples!!!
+vegetables = {"broccoli", "spinach"}
+
+def remove_punctuation(text):
+    return re.sub(r'[^\w\s]', '', text)
+
+# Example usage
+# text = "broccoli and spinach can make your tummy hurt!"
+wiki_output = remove_punctuation(text)
+wiki_output = wiki_output.lower()
+print(wiki_output)
+
+wiki_output = wiki_output.split(" ")
+
+for word in wiki_output:
+    if word in fruits:
+        fruit_interactions.append(word)
+    if word in vegetables:
+        vegetable_interactions.append(word)
+
+if len(fruit_interactions) > 0 or len(vegetable_interactions) > 0:
+    print("It looks like there are some interactions that you should be careful of!")
+else:
+    print("Nice! Doesn't look like there are any interactions!")
+
+if fruit_interactions: # checks that the list is not empty
+    fruit_interactions = ", ".join(fruit_interactions)
+    print(f"Fruits:  {fruit_interactions}")
+
+if vegetable_interactions:
+    vegetable_interactions = ", ".join(vegetable_interactions)
+    print(f"Vegetables:  {vegetable_interactions}")

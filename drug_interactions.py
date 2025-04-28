@@ -18,14 +18,7 @@ with open("brand_science_names.csv", encoding="utf-8") as f:
 #Step 2: load drug-drug interactions
 interactions = []
 
-with open("db_drug_interactions.csv", encoding="utf-8") as f:
-    reader = csv.DictReader(f)
-    for row in reader:
-        interactions.append({
-            "drug1": row["Drug 1"].strip(),
-            "drug2": row["Drug 2"].strip(),
-            "description": row["Interaction Description"].strip()
-        })
+
 
 
 #Step 3: get user input

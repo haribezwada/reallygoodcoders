@@ -56,8 +56,8 @@ import re
 fruit_interactions = []
 vegetable_interactions = []
 
-fruits = {"banana", "pineapple"} # these are examples!!!
-vegetables = {"broccoli", "spinach"}
+#fruits = {"banana", "pineapple"} # these are examples!!!
+#vegetables = {"broccoli", "spinach"}
 
 def remove_punctuation(text):
     return re.sub(r'[^\w\s]', '', text)
@@ -71,9 +71,9 @@ print(wiki_output)
 wiki_output = wiki_output.split(" ")
 
 for word in wiki_output:
-    if word in fruits:
+    if word in Data.fruits:
         fruit_interactions.append(word)
-    if word in vegetables:
+    if word in Data.vegetables:
         vegetable_interactions.append(word)
 
 if len(fruit_interactions) > 0 or len(vegetable_interactions) > 0:

@@ -1,6 +1,6 @@
 #Our CS32 Final Project!!! test 
 
-import requests
+import requests, Data
 
 def search_wikipedia(query):
     # Step 1: Search Wikipedia for the query

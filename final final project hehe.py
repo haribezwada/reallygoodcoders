@@ -202,7 +202,7 @@ if wiki_section_text.strip():
        f"Here is a section from a Wikipedia article about drug interactions:\n\n"
        f"{wiki_section_text.strip()}\n\n"
        f"Please summarize the key drug specific interaction-related information in one clear paragraph."
-       f"Now please summarize the key fruit interactions which are {fruit_interactions} and and the key vegetable interactions which are {vegetable_interactions} in one succinct paragraph"
+       f"Now please summarize the key fruit interactions which are {fruit_interactions} and and the key vegetable interactions which are {vegetable_interactions} of the drug {normalized_query} in one succinct paragraph"
    )
 
 

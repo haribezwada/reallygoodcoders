@@ -1,11 +1,11 @@
 
 
-Hello! Thank you so much for reviewing our CS32 final project! Our code takes the name of a drug, either its common name like Advil or scientific name like Ibuprofen and outputs the interactions it has with foods and other drugs. It does this by searching for the drug's Wikipedia page and then extracting the "Interactions" section. It then uses an API to connect with ChatGPT (Turbo 3.5) and request ChatGPT to "please summarize the key interaction-related information in one clear paragraph." Our code also does string processing on the extracted Wikipedia page to categorize the various interactions into interactions with either fruits or vegetables since these are foods people tend to think are "good" to eat when they are sick. But it is important for users to be aware of the potentially negative interactions.
-Running our code is simple: replace the "API KEY HERE" on line 41 with our API key: "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". This is to prevent the API key from being disabled by OpenAI, because it thinks GitHub is stealing all our secrets if we upload it to GitHub.
---- just type in the name of the medication you are taking/interested in when prompted by the computer. Typing in either the common drug name or the scientific name will both work. And then review the important information it ouputs!
+Hello! Thank you so much for reviewing our CS32 final project! Our code takes the name of a drug, either its common name like Advil or scientific name like Ibuprofen and outputs the interactions it has with foods and other drugs.
+It does this by searching for the drug's Wikipedia page and then extracting the "Interactions" section. It then uses an API to connect with ChatGPT (Turbo 3.5) and request ChatGPT to "please summarize the key interaction-related information in one clear paragraph."
+Our code also does string processing on the extracted Wikipedia page to categorize the various interactions into interactions with either fruits or vegetables since these are foods people tend to think are "good" to eat when they are sick. But it is important for users to be aware of the potentially negative interactions.
+Running our code is simple: replace the "API KEY HERE" on line 41 with our API key: "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".
+This is to prevent the API key from being disabled by OpenAI, because it thinks GitHub is stealing all our secrets if we upload it to GitHub.
+To get the interactions information, just type in the name of the medication you are taking/interested in when prompted by the computer. Typing in either the common drug name or the scientific name will both work. And then review the important information it ouputs!
 ChatGPT helped us generate the list of fruits and the list of vegetables used in our code.
 
-
-
-
-Thank you and have a great summer break!
+Thank you so much and have a great summer break!

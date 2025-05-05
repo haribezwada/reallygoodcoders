@@ -180,11 +180,6 @@ for word in wiki_output:
        vegetable_interactions.append(word)
 
 
-if len(fruit_interactions) > 0 or len(vegetable_interactions) > 0:
-   print("It looks like there are some interactions that you should be careful of!")
-else:
-   print("Nice! Doesn't look like there are any interactions!")
-
 
 if fruit_interactions: # checks that the list is not empty
    fruit_interactions = ", ".join(fruit_interactions)

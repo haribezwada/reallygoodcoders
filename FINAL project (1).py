@@ -38,7 +38,7 @@ vegetables = {
 
 
 #initialize chat gpt
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="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")
 
 
 #load brand-science name mapping
